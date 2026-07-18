@@ -1,0 +1,64 @@
+{
+  "project": {
+    "name": "야근 올빼미",
+    "target_count": 24,
+    "status": "planning"
+  },
+  "market_research": {
+    "target": "20~30대 직장인",
+    "theme": "게으른 올빼미",
+    "keywords": ["출근", "퇴근", "커피", "월요병"]
+  },
+  "character": {
+    "name": "야근 올빼미",
+    "species": "owl",
+    "personality": ["귀찮음", "장난기", "친근함"],
+    "style": "둥글고 단순한 형태",
+    "palette": {
+      "main": "#FFD966",
+      "sub": "#8A5A44",
+      "accent": "#FF6B6B"
+    },
+    "ratios": {
+      "face_ratio": 0.42,
+      "eye_ratio": 0.18,
+      "body_ratio": 0.55
+    }
+  },
+  "brand_guide": {
+    "must_have": ["둥근 얼굴", "노란 몸통", "부드러운 눈매"],
+    "must_not_have": ["날카로운 눈매", "어두운 색감", "과도하게 복잡한 장식"],
+    "reference_images": ["references/night-owl/base.png"]
+  },
+  "emoji_set": [
+    { "id": "emoji-01", "situation": "출근", "emotion": "피곤함", "status": "planned" },
+    { "id": "emoji-02", "situation": "퇴근", "emotion": "해방감", "status": "planned" },
+    { "id": "emoji-03", "situation": "커피", "emotion": "간절함", "status": "planned" },
+    { "id": "emoji-04", "situation": "월요병", "emotion": "절망", "status": "planned" },
+    { "id": "emoji-05", "situation": "웃음", "emotion": "기쁨", "status": "planned" },
+    { "id": "emoji-06", "situation": "울음", "emotion": "슬픔", "status": "planned" },
+    { "id": "emoji-07", "situation": "화남", "emotion": "분노", "status": "planned" },
+    { "id": "emoji-08", "situation": "졸림", "emotion": "나른함", "status": "planned" },
+    { "id": "emoji-09", "situation": "배고픔", "emotion": "허기", "status": "planned" },
+    { "id": "emoji-10", "situation": "감동", "emotion": "뭉클함", "status": "planned" },
+    { "id": "emoji-11", "situation": "놀람", "emotion": "당황", "status": "planned" },
+    { "id": "emoji-12", "situation": "감사", "emotion": "고마움", "status": "planned" },
+    { "id": "emoji-13", "situation": "회의", "emotion": "멍함", "status": "planned" },
+    { "id": "emoji-14", "situation": "야근", "emotion": "체념", "status": "planned" },
+    { "id": "emoji-15", "situation": "칭찬", "emotion": "쑥스러움", "status": "planned" },
+    { "id": "emoji-16", "situation": "거절", "emotion": "단호함", "status": "planned" },
+    { "id": "emoji-17", "situation": "사과", "emotion": "미안함", "status": "planned" },
+    { "id": "emoji-18", "situation": "응원", "emotion": "활기", "status": "planned" },
+    { "id": "emoji-19", "situation": "확인", "emotion": "안도", "status": "planned" },
+    { "id": "emoji-20", "situation": "기다림", "emotion": "초조함", "status": "planned" },
+    { "id": "emoji-21", "situation": "축하", "emotion": "신남", "status": "planned" },
+    { "id": "emoji-22", "situation": "휴식", "emotion": "평온", "status": "planned" },
+    { "id": "emoji-23", "situation": "집중", "emotion": "진지함", "status": "planned" },
+    { "id": "emoji-24", "situation": "퇴근 후", "emotion": "행복", "status": "planned" }
+  ],
+  "quality_gates": {
+    "planning": { "approved": true, "feedback": [] },
+    "design": { "approved": false, "feedback": ["기준 이미지 생성 후 비율 검증 필요"] },
+    "coloring": { "approved": false, "feedback": ["레이어 산출물 생성 후 검수 필요"] }
+  }
+}
