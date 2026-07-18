@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/emoticon-factory/project.schema.json",
+  "title": "Emoticon Factory Project",
+  "type": "object",
+  "required": [
+    "project",
+    "market_research",
+    "character",
+    "brand_guide",
+    "emoji_set",
+    "quality_gates"
+  ],
+  "properties": {
+    "project": {
+      "type": "object",
+      "required": ["name", "target_count", "status"],
+      "properties": {
+        "name": { "type": "string" },
+        "target_count": { "type": "integer", "minimum": 24, "maximum": 32 },
+        "status": { "type": "string", "enum": ["planning", "design", "coloring", "review", "packaged"] }
+      }
+    },
+    "market_research": {
+      "type": "object",
+      "required": ["target", "theme", "keywords"],
+      "properties": {
+        "target": { "type": "string" },
+        "theme": { "type": "string" },
+        "keywords": { "type": "array", "items": { "type": "string" }, "minItems": 1 }
+      }
+    },
+    "character": {
+      "type": "object",
+      "required": ["name", "species", "personality", "style", "palette", "ratios"],
+      "properties": {
+        "name": { "type": "string" },
+        "species": { "type": "string" },
+        "personality": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+        "style": { "type": "string" },
+        "palette": {
+          "type": "object",
+          "required": ["main", "sub", "accent"],
+          "properties": {
+            "main": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" },
+            "sub": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" },
+            "accent": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" }
+          }
+        },
+        "ratios": {
+          "type": "object",
+          "required": ["face_ratio", "eye_ratio", "body_ratio"],
+          "properties": {
+            "face_ratio": { "type": "number", "minimum": 0, "maximum": 1 },
+            "eye_ratio": { "type": "number", "minimum": 0, "maximum": 1 },
+            "body_ratio": { "type": "number", "minimum": 0, "maximum": 1 }
+          }
+        }
+      }
+    },
+    "brand_guide": {
+      "type": "object",
+      "required": ["must_have", "must_not_have", "reference_images"],
+      "properties": {
+        "must_have": { "type": "array", "items": { "type": "string" } },
+        "must_not_have": { "type": "array", "items": { "type": "string" } },
+        "reference_images": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "emoji_set": {
+      "type": "array",
+      "minItems": 24,
+      "maxItems": 32,
+      "items": {
+        "type": "object",
+        "required": ["id", "situation", "emotion", "status"],
+        "properties": {
+          "id": { "type": "string" },
+          "situation": { "type": "string" },
+          "emotion": { "type": "string" },
+          "status": { "type": "string", "enum": ["planned", "sketched", "lined", "colored", "approved"] }
+        }
+      }
+    },
+    "quality_gates": {
+      "type": "object",
+      "required": ["planning", "design", "coloring"],
+      "properties": {
+        "planning": { "$ref": "#/$defs/approval" },
+        "design": { "$ref": "#/$defs/approval" },
+        "coloring": { "$ref": "#/$defs/approval" }
+      }
+    }
+  },
+  "$defs": {
+    "approval": {
+      "type": "object",
+      "required": ["approved", "feedback"],
+      "properties": {
+        "approved": { "type": "boolean" },
+        "feedback": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
+}
